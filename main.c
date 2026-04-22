@@ -22,6 +22,10 @@ int main() {
             result = subtract(num1, num2);
             printf("Result = %d\n", result);
             break;
+        case 2:
+            result = multiply(num1, num2);
+            printf("Result = %d\n", result);
+            break;
         default:
             printf("Invalid choice!\n");
     }
