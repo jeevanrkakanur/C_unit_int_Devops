@@ -1,0 +1,345 @@
+{
+  "modules": {
+    "H2579061770660939698": {
+      "name": "main.c",
+      "fullname": "D:\\\\HCL_GIT_DEVOPS\\\\main.c",
+      "uuid": "H2579061770660939698",
+      "unknown": false,
+      "functions": [
+        "main"
+      ]
+    },
+    "H3148611719666651757": {
+      "name": "\u003ci\u003eUnknown Modules\u003c/i\u003e",
+      "fullname": "\u003ci\u003eUnknown Modules\u003c/i\u003e",
+      "uuid": "H3148611719666651757",
+      "unknown": true,
+      "functions": [
+        "printf",
+        "scanf"
+      ]
+    },
+    "H8804152170639184318": {
+      "name": "calculator.c",
+      "fullname": "D:\\\\HCL_GIT_DEVOPS\\\\calculator.c",
+      "uuid": "H8804152170639184318",
+      "unknown": false,
+      "functions": [
+        "add",
+        "subtract"
+      ]
+    }
+  },
+  "functions": {
+    "main": {
+      "name": "main",
+      "line": 4,
+      "id": 1,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H2579061770660939698",
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 8,
+          "col": 5,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 9,
+          "col": 5,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 10,
+          "col": 5,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "scanf",
+          "line": 11,
+          "col": 5,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 13,
+          "col": 5,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "scanf",
+          "line": 14,
+          "col": 5,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "add",
+          "line": 18,
+          "col": 22,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 19,
+          "col": 13,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "subtract",
+          "line": 22,
+          "col": 22,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 23,
+          "col": 13,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 26,
+          "col": 13,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "level": 0,
+      "calledby": [],
+      "wcet": -1
+    },
+    "printf": {
+      "name": "printf",
+      "line": -1,
+      "id": 0,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H3148611719666651757",
+      "calls": [],
+      "level": 1,
+      "calledby": [
+        "main"
+      ],
+      "wcet": -1
+    },
+    "scanf": {
+      "name": "scanf",
+      "line": -1,
+      "id": 1,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H3148611719666651757",
+      "calls": [],
+      "level": 1,
+      "calledby": [
+        "main"
+      ],
+      "wcet": -1
+    },
+    "add": {
+      "name": "add",
+      "line": 3,
+      "id": 1,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H8804152170639184318",
+      "calls": [],
+      "level": 1,
+      "calledby": [
+        "main"
+      ],
+      "wcet": -1
+    },
+    "subtract": {
+      "name": "subtract",
+      "line": 9,
+      "id": 2,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H8804152170639184318",
+      "calls": [],
+      "level": 1,
+      "calledby": [
+        "main"
+      ],
+      "wcet": -1
+    }
+  },
+  "entrypoints": [
+    {
+      "name": "main",
+      "module": "H2579061770660939698",
+      "wcet": -1
+    }
+  ],
+  "controlflows": [
+    {
+      "isRecursive": false,
+      "stacksize": -1,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "add",
+          "line": 18,
+          "col": 22,
+          "same_module": false,
+          "nbcalled": 0,
+          "alternates": []
+        }
+      ],
+      "missingfunctions": [
+        {
+          "name": "main"
+        },
+        {
+          "name": "add"
+        }
+      ],
+      "alternates": []
+    },
+    {
+      "isRecursive": false,
+      "stacksize": -1,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 10,
+          "col": 5,
+          "same_module": false,
+          "nbcalled": 0,
+          "alternates": [
+            {
+              "line": 13,
+              "col": 5,
+              "nbcalled": 0
+            },
+            {
+              "line": 19,
+              "col": 13,
+              "nbcalled": 0
+            },
+            {
+              "line": 23,
+              "col": 13,
+              "nbcalled": 0
+            },
+            {
+              "line": 26,
+              "col": 13,
+              "nbcalled": 0
+            },
+            {
+              "line": 8,
+              "col": 5,
+              "nbcalled": 0
+            },
+            {
+              "line": 9,
+              "col": 5,
+              "nbcalled": 0
+            }
+          ]
+        }
+      ],
+      "missingfunctions": [
+        {
+          "name": "main"
+        },
+        {
+          "name": "printf"
+        }
+      ],
+      "alternates": []
+    },
+    {
+      "isRecursive": false,
+      "stacksize": -1,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "scanf",
+          "line": 11,
+          "col": 5,
+          "same_module": false,
+          "nbcalled": 0,
+          "alternates": [
+            {
+              "line": 14,
+              "col": 5,
+              "nbcalled": 0
+            }
+          ]
+        }
+      ],
+      "missingfunctions": [
+        {
+          "name": "main"
+        },
+        {
+          "name": "scanf"
+        }
+      ],
+      "alternates": []
+    },
+    {
+      "isRecursive": false,
+      "stacksize": -1,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "subtract",
+          "line": 22,
+          "col": 22,
+          "same_module": false,
+          "nbcalled": 0,
+          "alternates": []
+        }
+      ],
+      "missingfunctions": [
+        {
+          "name": "main"
+        },
+        {
+          "name": "subtract"
+        }
+      ],
+      "alternates": []
+    }
+  ],
+  "worstStackSize": -1,
+  "nbFlows": 4,
+  "nbIncompleteFlows": 4,
+  "nbRecursiveFlows": 0,
+  "nbFunctions": 5,
+  "nbFunctionsNoValue": 5,
+  "perEntryPoints": {},
+  "sumStackSize": -1,
+  "maximumStackSize": -1,
+  "securityPercent": 0,
+  "securityStackSize": -1
+}

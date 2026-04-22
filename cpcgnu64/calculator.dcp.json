@@ -1,0 +1,68 @@
+{
+  "modules": {
+    "H8804152120937257248": {
+      "name": "calculator.c",
+      "fullname": "calculator.c",
+      "uuid": "H8804152120937257248",
+      "unknown": false,
+      "functions": [
+        "add",
+        "subtract"
+      ]
+    },
+    "H9009042695716972312": {
+      "name": "main.c",
+      "fullname": "main.c",
+      "uuid": "H9009042695716972312",
+      "unknown": false,
+      "functions": [
+        "main"
+      ]
+    }
+  },
+  "functions": {
+    "add": {
+      "name": "add",
+      "line": 0,
+      "id": 0,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H8804152120937257248",
+      "calls": [],
+      "level": -1,
+      "calledby": [],
+      "wcet": -1
+    },
+    "subtract": {
+      "name": "subtract",
+      "line": 0,
+      "id": 0,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H8804152120937257248",
+      "calls": [],
+      "level": -1,
+      "calledby": [],
+      "wcet": -1
+    },
+    "main": {
+      "name": "main",
+      "line": 0,
+      "id": 0,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H9009042695716972312",
+      "calls": [],
+      "level": -1,
+      "calledby": [],
+      "wcet": -1
+    }
+  },
+  "entrypoints": [],
+  "variables": [],
+  "nbGlobalVariables": 0,
+  "nbDefUses": 0,
+  "nbDefUsesCovered": 0,
+  "nbVariablesWithoutDefUse": 0,
+  "variablesWithoutDefUse": []
+}

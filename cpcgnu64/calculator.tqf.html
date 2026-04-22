@@ -1,0 +1,1016 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DevOps Test Embedded - Worst Case Execution Time Report</title>
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<link rel="stylesheet" href="file://D:/Program Files/HCL/DevOpsTestEmbedded/lib/web/bootstrap-4.1.3/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.2.1/css/all.css">
+<link rel="stylesheet" href="file://D:/Program Files/HCL/DevOpsTestEmbedded/lib/web/fontawesome-free-6.2.1-web/css/all.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.min.css">
+<link rel="stylesheet" href="file://D:/Program Files/HCL/DevOpsTestEmbedded/lib/web/vis-4.21.0/dist/vis.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css">
+<link rel="stylesheet" href="file://D:/Program Files/HCL/DevOpsTestEmbedded/lib/web/Chart.js-2.8.0/Chart.min.css">
+
+ <style type="text/css">
+@media print
+{    
+    .no-print, .no-print *  
+    {
+        display: none !important;
+    }
+}
+#callgraphID {
+      width: 100%;
+      height: 500px;
+      border: 1px solid lightgray;
+    }
+.switch {
+  font-size: 1rem;
+  position: relative;
+}
+.switch input {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  background: none;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  padding: 0;
+}
+.switch input + label {
+  position: relative;
+  min-width: calc(calc(2.375rem * .8) * 2);
+  border-radius: calc(2.375rem * .8);
+  height: calc(2.375rem * .8);
+  line-height: calc(2.375rem * .8);
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+  vertical-align: middle;
+  text-indent: calc(calc(calc(2.375rem * .8) * 2) + .5rem);
+}
+.switch input + label::before,
+.switch input + label::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(calc(2.375rem * .8) * 2);
+  bottom: 0;
+  display: block;
+}
+.switch input + label::before {
+  right: 0;
+  background-color: #dee2e6;
+  border-radius: calc(2.375rem * .8);
+  transition: 0.2s all;
+}
+.switch input + label::after {
+  top: 2px;
+  left: 2px;
+  width: calc(calc(2.375rem * .8) - calc(2px * 2));
+  height: calc(calc(2.375rem * .8) - calc(2px * 2));
+  border-radius: 50%;
+  background-color: white;
+  transition: 0.2s all;
+}
+.switch input:checked + label::before {
+  background-color: #08d;
+}
+.switch input:checked + label::after {
+  margin-left: calc(2.375rem * .8);
+}
+.switch input:focus + label::before {
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0, 136, 221, 0.25);
+}
+.switch input:disabled + label {
+  color: #868e96;
+  cursor: not-allowed;
+}
+.switch input:disabled + label::before {
+  background-color: #e9ecef;
+}
+.switch.switch-sm {
+  font-size: 0.875rem;
+}
+.switch.switch-sm input + label {
+  min-width: calc(calc(1.9375rem * .8) * 2);
+  height: calc(1.9375rem * .8);
+  line-height: calc(1.9375rem * .8);
+  text-indent: calc(calc(calc(1.9375rem * .8) * 2) + .5rem);
+}
+.switch.switch-sm input + label::before {
+  width: calc(calc(1.9375rem * .8) * 2);
+}
+.switch.switch-sm input + label::after {
+  width: calc(calc(1.9375rem * .8) - calc(2px * 2));
+  height: calc(calc(1.9375rem * .8) - calc(2px * 2));
+}
+.switch.switch-sm input:checked + label::after {
+  margin-left: calc(1.9375rem * .8);
+}
+.switch.switch-lg {
+  font-size: 1.25rem;
+}
+.switch.switch-lg input + label {
+  min-width: calc(calc(3rem * .8) * 2);
+  height: calc(3rem * .8);
+  line-height: calc(3rem * .8);
+  text-indent: calc(calc(calc(3rem * .8) * 2) + .5rem);
+}
+.switch.switch-lg input + label::before {
+  width: calc(calc(3rem * .8) * 2);
+}
+.switch.switch-lg input + label::after {
+  width: calc(calc(3rem * .8) - calc(2px * 2));
+  height: calc(calc(3rem * .8) - calc(2px * 2));
+}
+.switch.switch-lg input:checked + label::after {
+  margin-left: calc(3rem * .8);
+}
+.switch + .switch {
+  margin-left: 1rem;
+}
+
+body {
+  padding: 1rem;
+}
+
+.dropdown-menu {
+  margin-top: .75rem;
+}
+  </style>
+
+</head>
+<body>
+
+<script src="https://code.jquery.com/jquery-3.6.2.slim.min.js"></script>
+<script src="file://D:/Program Files/HCL/DevOpsTestEmbedded/lib/web/jquery-3.6.2.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="file://D:/Program Files/HCL/DevOpsTestEmbedded/lib/web/bootstrap-4.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.21.0/vis.js"></script>
+<script src="file://D:/Program Files/HCL/DevOpsTestEmbedded/lib/web/vis-4.21.0/dist/vis.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script src="file://D:/Program Files/HCL/DevOpsTestEmbedded/lib/web/Chart.js-2.8.0/Chart.min.js"></script>
+
+	<div class="mt-4 p-5 bg-secondary text-white rounded" style="margin-bottom: 2rem;padding: 4rem 2rem;">
+      <div class="container">
+        <img src="data:image/png;base64,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"></img>
+        <h1 class="display-3">Performance Report</h1>
+        <a class="" data-toggle="collapse" href="#collapseID" role="button" aria-expanded="false" aria-controls="collapseID">
+   			 Show/hide documentation
+  		</a>
+        <div class="collapse" id="collapseID">
+	        <p>This report displays in the <b>Summary</b> table the total number of functions and the number of fuctions that have never been executed and for which we have no data. If the instrumentation have been done with the option <b>WCET (Worst Case Execution Time)</b>, then the table contains the list of the entry points with an evaluation of the WCET for each of them.
+	        This info can be empty (and the cell is red) if we were not able to compute the WCET. This can occur when one of the called functions in the call graph starting with this entry point has never been executed.<p>
+        	<p style="margin-bottom:0;">Then the summary is followed by 2 charts:</p><ul><li><b>% Function Time</b>: it gives the 5 top functions that the greatest % Function Time</li><li><b>Average Function Time</b>it gives the 5 top functions that the greatest Average Function Time</li></ul>
+     	   <p style="margin-bottom:0;">The <b>Functions</b> part of the report displays all the functions found in the application with the following information:</p>
+     	   <ul>
+     	   	 <li><b>Functions</b>: the name of the function.</li>
+     	   	 <li><b>EP</b>: is this function an entry point or not. You can provide the list of the entry points, or, if not, they are deduced from the call graph (all the functions that are never called).</li>
+     	   	 <li><b># Calls</b>: the number of times this function is called.  If this value is 0, there is no more information for this function in the table because it has never been executed.</li>
+     	   	 <li><b>Function Time</b>: the total time spent in this function</li>
+     	   	 <li><b>Function + Desc. Time</b>: the total time spent in this function or one of its descendants.</li>
+     	   	 <li><b>% Function Time</b>: the percentage of time spent in this function compared with the total time.</li>
+     	   	 <li><b>% Function + Desc. Time</b>: the percentage of time spent in this function or one of its descendants compared with the total time.</li>
+     	   	 <li><b>Average Function Time</b>: the average time spent in this function.</li>
+     	   </ul>
+     	   <p style="margin-bottom:0;">If your instrument the application with the option <b>Compute F max and F + D max</b> we provide the following information:</p>
+     	   <ul>
+     	   	 <li><b>Max Function Time</b>: the maximum time spent in one call of this function excluded its descendants.</li>
+     	   	 <li><b>Max Function + Desc. Time</b>: the maximum time spent in one call of this function included its descendants.</li>
+     	   </ul>
+     	   <p style="margin-bottom:0;">If your instrument the application with the option <b>WCET</b> we provide the following information:</p>
+     	   <ul>
+     	   	 <li><b>WCET</b>: an evaluation of the Worst Case Execution Time. This info can be empty if we were not able to compute the WCET. This can occur when one of the its descendants starting has never been executed</li>
+     	   </ul>
+        	<p>The <b>Call Graph</b> part displays all the functions as an interactive call graph from left to right or from top to bottom. If the application have been instrumented with the option WCET, a tooltip on each function (node of the graph) gives the WCET.</p>
+        </div>
+        <p class="text-right">Generated on <b><span id="dateID"></span></b></p>
+      </div>
+    </div>
+
+	<div class="container" style="max-width:85%;">
+
+		<div class="row">
+			<h2>Summary</h2>
+			<div class="col-md-12">
+				<div class="table-responsive">
+					<table class="table table-bordered">
+						<thead class="thead-dark">
+							<tr><th># Functions <span class='noWCETClass noMinMaxClass'>and Entry Points</span></th><th></th></tr>
+						</thead>
+						<tbody id="summaryID">
+							<tr><td><b># Functions</b></td><td id="nbFunctionsID"></td></tr>
+							<tr><td><b># Never called Functions</b></td><td id="nbFunctionsWithoutWCET"></td></tr>
+						</tbody>
+					</table>
+					<table style="table-layout:fixed;" class="table table-bordered">
+						<thead>
+						</thead>
+						<tbody>
+							<tr><td><div style="width:100%; height:100%;"><canvas id="chartID"></canvas></div></td><td><div style="width:100%; height:100%;"><canvas id="chart2ID"></canvas></div></td></tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<h2>Functions</h2>
+			<div class="col-md-12">
+				<div class="table-responsive">
+					<table id="functionsTableID" class="table table-bordred table-striped">
+						<thead class="thead-dark">
+							<tr align="left">
+								<th class="noWCETClass"></th>
+								<th><a class="sortFunctionClass" sortby="1">Functions <i style="display:none;" class="sortFunctionIconClass fa fa-fw fa-sort-down"></i></a></th>
+								<th><a class="sortFunctionClass" sortby="2">EP <i style="display:none;" class="sortFunctionIconClass fa fa-fw fa-sort-down"></i></a></th>
+								<th><a class="sortFunctionClass" sortby="3"># Calls <i style="display:none;" class="sortFunctionIconClass fa fa-fw fa-sort-down"></i></a></th>
+								<th><a class="sortFunctionClass" sortby="4">Function Time <i style="display:none;" class="sortFunctionIconClass fa fa-fw fa-sort-down"></i></a></th>
+								<th><a class="sortFunctionClass" sortby="5">Function + Desc. Time <i style="display:none;" class="sortFunctionIconClass fa fa-fw fa-sort-down"></i></a></th>
+								<th><a class="sortFunctionClass" sortby="6">% Function Time <i style="display:none;" class="sortFunctionIconClass fa fa-fw fa-sort-down"></i></a></th>
+								<th><a class="sortFunctionClass" sortby="7">% Function + Desc. Time <i style="display:none;" class="sortFunctionIconClass fa fa-fw fa-sort-down"></i></a></th>
+								<th><a class="sortFunctionClass" sortby="8">Average Function Time <i style="display:none;" class="sortFunctionIconClass fa fa-fw fa-sort-down"></i></a></th>
+								<th class='noMinMaxClass'><a class="sortFunctionClass" sortby="9">Max Function Time <i style="display:none;" class="sortFunctionIconClass fa fa-fw fa-sort-down"></i></a></th>
+								<th class='noMinMaxClass'><a class="sortFunctionClass" sortby="10">Max Function + Desc. Time <i style="display:none;" class="sortFunctionIconClass fa fa-fw fa-sort-down"></i></a></th>
+								<th class='noWCETClass'><a class="sortFunctionClass" sortby="11">WCET <i style="display:none;" class="sortFunctionIconClass fa fa-fw fa-sort-down"></i></a></th>
+							</tr>
+						</thead>
+						<tbody id="tableFunctionsID">
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<h2>Call Graph</h2>
+			<div class="w-100"></div>
+			<div class="col-4">
+				<div class="table-responsive">
+						<table class="table table-bordered">
+							<thead class="thead-dark">
+								<tr align="left">
+									<th>Colors</th>
+									<th>Modules</th>
+								</tr>
+							</thead>
+							<tbody id="moduleListID"></tbody>
+						</table>
+					</div>
+			</div>
+      		<div class="col" id="selectedCCID" style="display:none;">
+      			<h2>Selected Control Flow</h2>
+      			<p id="selectedCCTextID"></p>
+      		</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 text-right" id="switchTDID">
+				<span class="switch">
+					<label for="switch-id">Left-Right</label>
+		  			<input type="checkbox" class="switch" >
+  					<label for="switch-id">Top-Down</label>
+				</span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div id="callgraphID"></div>
+			<div>
+		</div>
+
+		<br style="margin-bottom:50px;"/>
+
+	</div>
+
+
+
+	<script>
+	var palette = ['#e6194b', '#3cb44b', '#ffe119', '#4363d8', '#f58231', '#911eb4', '#46f0f0', '#f032e6', '#bcf60c', '#fabebe', '#008080', '#e6beff', '#9a6324', '#fffac8', '#800000', '#aaffc3', '#808000', '#ffd8b1', '#000075', '#808080'];
+	var data = {
+  "modules": {
+    "H2579061770660939698": {
+      "name": "main.c",
+      "fullname": "D:\\\\HCL_GIT_DEVOPS\\\\main.c",
+      "uuid": "H2579061770660939698",
+      "unknown": false,
+      "functions": [
+        "main"
+      ]
+    },
+    "H3148611719666651757": {
+      "name": "\u003ci\u003eUnknown Modules\u003c/i\u003e",
+      "fullname": "\u003ci\u003eUnknown Modules\u003c/i\u003e",
+      "uuid": "H3148611719666651757",
+      "unknown": true,
+      "functions": [
+        "printf",
+        "scanf"
+      ]
+    },
+    "H8804152170639184318": {
+      "name": "calculator.c",
+      "fullname": "D:\\\\HCL_GIT_DEVOPS\\\\calculator.c",
+      "uuid": "H8804152170639184318",
+      "unknown": false,
+      "functions": [
+        "add",
+        "subtract"
+      ]
+    }
+  },
+  "functions": {
+    "main": {
+      "name": "main",
+      "line": 4,
+      "id": 1,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H2579061770660939698",
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 8,
+          "col": 5,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 9,
+          "col": 5,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 10,
+          "col": 5,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "scanf",
+          "line": 11,
+          "col": 5,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 13,
+          "col": 5,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "scanf",
+          "line": 14,
+          "col": 5,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "add",
+          "line": 18,
+          "col": 22,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 19,
+          "col": 13,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "subtract",
+          "line": 22,
+          "col": 22,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 23,
+          "col": 13,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 26,
+          "col": 13,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "level": 0,
+      "calledby": [],
+      "wcet": -10
+    },
+    "printf": {
+      "name": "printf",
+      "line": -1,
+      "id": 0,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H3148611719666651757",
+      "calls": [],
+      "level": 1,
+      "calledby": [
+        "main"
+      ],
+      "wcet": -10
+    },
+    "scanf": {
+      "name": "scanf",
+      "line": -1,
+      "id": 1,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H3148611719666651757",
+      "calls": [],
+      "level": 1,
+      "calledby": [
+        "main"
+      ],
+      "wcet": -10
+    },
+    "add": {
+      "name": "add",
+      "line": 3,
+      "id": 1,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H8804152170639184318",
+      "calls": [],
+      "level": 1,
+      "calledby": [
+        "main"
+      ],
+      "wcet": -10
+    },
+    "subtract": {
+      "name": "subtract",
+      "line": 9,
+      "id": 2,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H8804152170639184318",
+      "calls": [],
+      "level": 1,
+      "calledby": [
+        "main"
+      ],
+      "wcet": -10
+    }
+  },
+  "entrypoints": [
+    {
+      "name": "main",
+      "module": "H2579061770660939698",
+      "wcet": -10
+    }
+  ],
+  "timeunit": "",
+  "level": 1
+};
+	var d = new Date(1776855069126);
+	$("#dateID").html(d.toLocaleString());
+	
+	var hasStorage = false;
+	try {
+		hasStorage = (typeof(localStorage) !== "undefined");
+	} catch (exception) {
+	}
+
+	function findFunctionByUuid(uuid) { // uuid of the function
+		return data.functions[uuid];
+	}
+
+	function findModuleByFunctionUuid(uuid) { // uuid of the function
+		var f = findFunctionByUuid(uuid);
+		if (f != null) return data.modules[f.module];
+		return null;
+	}
+
+	function getRandomColor() {
+  		var letters = '0123456789ABCDEF';
+  		var color = '#';
+  		for (var i = 0; i < 6; i++) {
+    		color += letters[Math.floor(Math.random() * 16)];
+  		}
+  		return color;
+	}
+
+	function findCFsFromCall(calling,called,line) {
+		var CCs = [];
+		for (var cc in data.controlflows) {
+			var ctlc = data.controlflows[cc];
+			for (var call in ctlc.calls) {
+				var aCall = ctlc.calls[call];
+				if (aCall.calling == calling && aCall.called == called) {
+					CCs.push(cc);
+					break;
+				}
+			}
+		}
+		return CCs;
+	}
+
+	// Filter the Calling Control in the table and the call graph
+	function displayCallGraphAndSummary() {
+		$("#nbFunctionsID").html("<p style='margin-bottom:0px;'>"+nbFunctions+"</p>");
+		$("#nbFunctionsWithoutWCET").html("<p style='margin-bottom:0px;'>"+nbFunctionWithoutWCET+"</p>");
+		if (nbFunctionWithoutWCET>0) {
+			$("#nbFunctionsWithoutWCET").css('color','white');
+			$("#nbFunctionsWithoutWCET").css('background-color','red');
+			$("#nbFunctionsWithoutWCET").css('font-weight','bold');
+		}
+		for (var ep in data.entrypoints) {
+			var epoint = data.entrypoints[ep];
+			$("#summaryID").append("<tr class='noWCETClass'><td><b>"+epoint.name+"</b></td>"+(epoint.wcet>0?"<td>"+epoint.wcet+" "+data.timeunit+"</td>":"<td style='padding:0px;height:1px;'><div style='height:100%; width:100%; background-color:red;'>&nbsp;</div></td>")+"</tr>");
+		}
+		// Draw the call graph
+		var nodes = computeNodes();
+	    var vis_nodes = new vis.DataSet(nodes);
+	  	var edges = computeEdges(nodes);
+	  	var vis_edges = new vis.DataSet(edges);
+	  	var container = document.getElementById('callgraphID');
+	  	var data_vis = {
+	    	nodes: vis_nodes,
+	    	edges: vis_edges
+	  	};
+	  	network = new vis.Network(container, data_vis, options);
+	}
+	
+	function getMaxRange(data){
+		var max = -1;
+		var r;
+		var i = 0;
+		for (var d in data) {
+			if (data[d].value > max) {max = data[d].value; r = i;};
+			i++;
+		}
+		return r;
+	}
+	// Keep only the 5 max + others
+	function filterForChart(data){
+		var res = [];
+		for (var i = 0; i < 5; i++) {
+			var r = getMaxRange(data);
+			if (r == undefined) break; // end of data
+			var elem = data.splice(r,1);
+			res.push(elem[0]);
+		}
+		var others = 0;
+		for (var d in data) {
+			others += data[d].value;
+		}
+		res.push({"name":"Others","value":others});
+		return res;
+	}
+	
+	// Fill the functions table
+	function displayFunctionsTable(listFunctions) {
+		var sumLocal = 0;  // Sum of the local time for all the application
+		var maxTime = 0;   // Maximum total time
+		nbFunctions = 0;
+		nbFunctionWithoutWCET = 0;
+		var chartFunctionTime = [];
+		var chartAverageTime = [];
+		var i = 0;
+		for (var f in listFunctions) {
+			var func = listFunctions[f];
+			var module = data.modules[func.module];
+			if (module && module.unknown) continue;
+			nbFunctions++;
+			if (func.nbCalled==0 || (data.level==2 && func.wcet<0)) nbFunctionWithoutWCET++;
+			var isEP = false;
+			for (var ep in data.entrypoints) {
+				if (data.entrypoints[ep].name == func.name && data.entrypoints[ep].module == func.module) {
+					isEP = true;
+					break;
+				}
+			}
+			$("#tableFunctionsID").append("<tr class='firstLevelClass'><td class='noWCETClass' id='firstLevel"+i+"'><a><i range='"+i+"' class='openCloseClass fa fa-chevron-right'></i></a></td><td value='"+func.name+"' "+(func.nbCalled==0?" style='color:red;'":"")+">"+func.name+"</td>"+(isEP?"<td value='1'><i class='fa fa-check'></i></td>":"<td value='0'></td>")+"<td value='"+func.nbCalled+"'>"+func.nbCalled+"</td>"+(func.nbCalled==0?"<td value='0'></td>":"<td value='"+func.sumLocal+"'>"+func.sumLocal+data.timeunit+"</td>")+(func.nbCalled==0?"<td value='0'></td>":"<td value='"+func.sumTotal+"'>"+func.sumTotal+data.timeunit+"</td>")+"<td id='percentSumLocal"+i+"ID'></td><td id='percentSumTotal"+i+"ID'></td>"+(func.nbCalled==0?"<td value='-1.0'></td>":"<td value='"+func.averageLocal+"'>"+(func.averageLocal<1.0?"<1":Math.round(func.averageLocal))+data.timeunit+"</td>")+(func.nbCalled==0?"<td class='noMinMaxClass' value='0'></td>":"<td class='noMinMaxClass' value='"+func.maxLocal+"'>"+func.maxLocal+data.timeunit+"</td>")+(func.nbCalled==0?"<td class='noMinMaxClass' value='0'></td>":"<td class='noMinMaxClass' value='"+func.maxTotal+"'>"+func.maxTotal+data.timeunit+"</td>")+(func.nbCalled==0 || func.wcet<0?"<td class='noWCETClass' value='0'></td>":"<td class='noWCETClass' value='"+func.wcet+"'>"+func.wcet+data.timeunit+"</td>")+"</tr>");
+			var nbCall = 0;
+			for (var c in func.calls) {
+				var call = func.calls[c];
+				var called = data.functions[call.called];
+				var module = data.modules[called.module];
+				if (module.unknown) continue;
+				$("#tableFunctionsID").append("<tr class='secondLevelClass noWCETClass openClose"+i+"Class' style='display:none;'><td></td><td colspan=9><small>Call <i>"+call.called+"</i> (line:"+call.line+",col:"+call.col+")</small></td><td><small>"+call.nbcalled+" "+(call.nbcalled>1?"calls":"call")+"</small></td><td><small>"+(called.wcet>0?called.wcet+data.timeunit:"")+"</small></td></tr>");
+				nbCall++;
+			}
+			if (nbCall == 0) $("#firstLevel"+i).html("");
+			if (func.nbCalled > 0) {
+				sumLocal += func.sumLocal;
+				if (func.sumTotal > maxTime) maxTime = func.sumTotal;
+				chartAverageTime.push({"name":func.name,"value":func.averageLocal});
+			}
+			i++;
+		}
+		// % local and total
+		i = 0;
+		for (var f in listFunctions) {
+			var func = listFunctions[f];
+			if (func.nbCalled > 0) {
+				var sl = (func.sumLocal*100)/sumLocal;
+				var st = (func.sumTotal*100)/maxTime;
+				$("#percentSumLocal"+i+"ID").html(sl<0.01?"<0.01%":(Math.round(sl*100)/100)+"%");
+				$("#percentSumLocal"+i+"ID").attr("value",sl.toString());
+				$("#percentSumTotal"+i+"ID").html(st<0.01?"<0.01%":(Math.round(st*100)/100)+"%");
+				$("#percentSumTotal"+i+"ID").attr("value",st.toString());
+				chartFunctionTime.push({"name":func.name,"value":Math.round(sl*100)/100});
+			} else {
+				$("#percentSumLocal"+i+"ID").attr("value","0");
+				$("#percentSumTotal"+i+"ID").attr("value","0");
+			}
+			i++;
+		}
+		// Display the charts
+		var ctxChart = $('#chartID');
+		var chart = null;
+		var data1 = {				
+    		datasets: [{
+	        	data: [],
+		        backgroundColor: [
+	                'rgba(255, 0, 0, 0.5)',
+	                'rgba(0, 255, 0, 0.5)',
+	                'rgba(0, 0, 255, 0.5)',
+	                'rgba(120, 120, 0, 0.5)',
+	                'rgba(120, 0, 120, 0.5)',
+	                'rgba(0, 120, 120, 0.5)'
+            	]
+    		}],
+    		labels: []
+		};
+		var options1 = { 
+			legend : {
+				position : 'top'
+			},
+			title : {
+				display : true,
+				position : 'bottom',
+				text : "% Function Time"
+			}
+		};
+		chartFunctionTime = filterForChart(chartFunctionTime);
+		for (var f in chartFunctionTime) {
+			data1.datasets[0].data.push(chartFunctionTime[f].value);
+			data1.labels.push(chartFunctionTime[f].name);
+		}
+		if (chart != null) chart.destroy();
+		chart = new Chart(ctxChart,{type: 'pie', data: data1, options: options1 });
+		// Second chart
+		var ctxChart2 = $('#chart2ID');
+		var chart2 = null;
+		var data2 = {				
+    		datasets: [{
+	        	data: [],
+		        backgroundColor: [
+	                'rgba(255, 0, 0, 0.5)',
+	                'rgba(0, 255, 0, 0.5)',
+	                'rgba(0, 0, 255, 0.5)',
+	                'rgba(120, 120, 0, 0.5)',
+	                'rgba(120, 0, 120, 0.5)',
+	                'rgba(0, 120, 120, 0.5)'
+            	]
+    		}],
+    		labels: []
+		};
+		var options2 = { 
+			legend : {
+				position : 'top'
+			},
+			title : {
+				display : true,
+				position : 'bottom',
+				text : "Average Function Time"
+			}
+		};
+		chartAverageTime = filterForChart(chartAverageTime);
+		for (var f in chartAverageTime) {
+			data2.datasets[0].data.push(chartAverageTime[f].value);
+			data2.labels.push(chartAverageTime[f].name);
+		}
+		if (chart2 != null) chart2.destroy();
+		chart2 = new Chart(ctxChart2,{type: 'pie', data: data2, options: options2 });
+		
+	}
+	
+	// Sort the function table (col: num of the column to sort, up: true if up)
+	function sortFunctionsTable(col,up) {
+		var table, rows, switching, i, j, x, y, shouldSwitch;
+	  	table = document.getElementById("functionsTableID");
+	  	switching = true;
+	  	while (switching) {
+	    	switching = false;
+		    rows = table.rows;
+	   		/* Loop through all table rows (except the first, which contains table headers): */
+	    	for (i = 1; i < (rows.length - 1); i++) {
+	      		// Start by saying there should be no switching:
+	      		shouldSwitch = false;
+	      		/* Get the two elements you want to compare, one from current row and one from the next: */
+	      		x = null;//rows[i].getElementsByTagName("TD")[col];
+				while (true) {
+	      			if (rows[i].classList.contains('secondLevelClass')) {
+	      				i++;
+	      				if (i > rows.length - 2) break;
+	      			} else {
+			      		x = rows[i].getElementsByTagName("TD")[col];
+			      		break;
+			      	}
+		      	}
+				if (x == null) break;
+	      		j = i+1;
+	      		y = null;
+	      		while (true) {
+	      			if (rows[j].classList.contains('secondLevelClass')) {
+	      				j++;
+	      				if (j > rows.length - 1) break;
+	      			} else {
+			      		y = rows[j].getElementsByTagName("TD")[col];
+			      		break;
+			      	}
+		      	}
+		      	if (y == null) break;
+	      		// Check if the two rows should switch place:
+	      		if (col == 1) { // This is the name of the function => user the string inside
+	      			if (!up) {
+	      				if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+	        				shouldSwitch = true;
+	        				break;
+	      				}
+	      			} else {
+	      				if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+	        				shouldSwitch = true;
+	        				break;
+	      				}
+	      			}
+	      		} else { // This is not the name of the function => user the value attribute
+	      			if (!up) {
+	      				if (parseFloat(x.attributes["value"].value) > parseFloat(y.attributes["value"].value)) {
+	      					shouldSwitch = true;
+	        				break;
+	      				}
+	      			} else {
+	      				if (parseFloat(x.attributes["value"].value) < parseFloat(y.attributes["value"].value)) {
+	      					shouldSwitch = true;
+	        				break;
+	      				}
+	      			} 
+	      		}
+	    	}
+	    	if (shouldSwitch) {
+	      		/* If a switch has been marked, make the switch and mark that a switch has been done: */
+	      		while (true) {
+		      		rows[i].parentNode.insertBefore(rows[j], rows[i]);
+		      		j++;i++;
+		      		if (j < rows.length && rows[j].classList.contains('secondLevelClass')) {
+		      		} else {
+		      			break;
+		      		}
+		      	}
+	      		switching = true;
+	    	}
+	  	}
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////////////
+	// Init
+	var mn = 0;
+	var nbFunctions = 0;
+	var nbFunctionWithoutWCET = 0;
+	for (var m in data.modules) {
+		var module = data.modules[m];
+		if (module.unknown) continue;
+		$("#moduleListID").append("<tr><td bgcolor='"+palette[mn%palette.length]+"'></td><td>"+module.name+"</td></tr>");
+		$("#filterModuleListID").append("<tr><td><input style='margin-left:0px;' uuid='"+module.uuid+"' class='selectCallingModuleClass form-check-input' type='checkbox' "+(module.unknown?"disabled":"checked")+"></td><td>"+module.name+"</td><td><input style='margin-left:0px;' uuid='"+module.uuid+"' class='selectCalledModuleClass form-check-input' type='checkbox' checked></td><td>"+module.name+"</td></tr>");
+		mn++;
+	}
+
+	// Display the table of Control Flows
+	var n = 10;
+	if (hasStorage) {
+	 	var value = localStorage.getItem("options.worststacksize.display");
+	 	if (value != null && value != undefined) {
+		 	if (value === "") {
+	     		n = Number.MAX_SAFE_INTEGER;
+	     	} else {
+	     		n = parseInt(value);
+	     	}
+	     	$("#selectCFNbID").val(value);
+	 	}
+	}
+
+	// Display the table of Functions
+	displayFunctionsTable(data.functions);
+	// Setup callbacks on headers
+	$(".sortFunctionClass").click(function(){
+		var numCol = $(this).attr("sortby");
+		if ($(this).children(0).css("display") == "none") { // click on a new sorted column
+			$(".sortFunctionIconClass").hide(); // hide all arrows
+			$(this).children(0).show(); // Display the new one
+			var up = $(this).children(0).hasClass("fa-sort-up");
+			sortFunctionsTable(numCol,up);
+		} else { // same sorted column
+			var up = $(this).children(0).hasClass("fa-sort-up");
+			if (up) {
+				$(this).children(0).removeClass("fa-sort-up");
+				$(this).children(0).addClass("fa-sort-down");
+			} else {
+				$(this).children(0).removeClass("fa-sort-down");
+				$(this).children(0).addClass("fa-sort-up");
+			}
+			up = !up;
+			sortFunctionsTable(numCol,up);
+		}
+	});
+
+	$(".checkCallbackClass").click(function(){
+	 	$(".checkCallbackClass").html("<i class='far fa-square'></i>");
+	 	$(this).html("<i class='far fa-check-square'></i>");
+	 	var stack = $(this).attr("stack");
+	 	var ccNum = $(this).attr("ccNum");
+	 	var selectEdges = [];
+	 	for (var e in edgesUUID) {
+	 		var listCCs = edgesUUID[e];
+	 		for (var i in listCCs) {
+	 			if (listCCs[i] == ccNum) {
+	 				selectEdges.push(e);
+	 				break;
+	 			}
+	 		}
+	 	}
+	 	network.selectEdges(selectEdges);
+	 	$("#selectedCCID").css("display","");
+	 	$("#selectedCCTextID").html(stack);
+	});
+
+	$("#switchTDID").click(function(){
+	    var inp = $("#switchTDID :input")[0];
+		if (inp.checked) {
+			inp.checked = false;
+			options.layout.hierarchical.direction = 'LR';
+		} else {
+			inp.checked = true;
+			options.layout.hierarchical.direction = 'UD';
+		}
+		// Store in local storage
+		if (hasStorage) localStorage.setItem("options.layout.hierarchical.direction", options.layout.hierarchical.direction);
+		// Draw the call graph
+		var nodes = computeNodes();
+	    var vis_nodes = new vis.DataSet(nodes);
+	  	var edges = computeEdges(nodes);
+	  	var vis_edges = new vis.DataSet(edges);
+	  	var container = document.getElementById('callgraphID');
+	  	var data_vis = {nodes: vis_nodes,edges: vis_edges};
+		network = new vis.Network(container, data_vis, options);
+	});
+
+	$("#selectCFNbID").on('change',function(){
+		var optionSelected = $(this).find("option:selected");
+     	var value = optionSelected.val();
+     	var n;
+     	if (value === "") {
+     		n = Number.MAX_SAFE_INTEGER;
+     	} else {
+     		n = parseInt(value);
+     	}
+     	if (hasStorage) localStorage.setItem("options.worststacksize.display", value);
+	});
+
+	function computeNodes() {
+		var nodes = [];
+		var n = 0;
+		var mn = 0;
+		for (var m in data.modules) {
+			var module = data.modules[m];
+			if (module.unknown) continue;
+			var color = getRandomColor();
+			for (var f in module.functions) {
+				var func = findFunctionByUuid(module.functions[f]);
+				var nvalue = {"id":n,"label":func.name,"level":func.level,"color":palette[mn%palette.length],"uuid":func.name,"module":module.uuid};
+				if (data.level >= 2) nvalue["title"] = func.wcet>=0?"WCET="+func.wcet+" "+data.timeunit:"no WCET";
+				nodes.push(nvalue);
+				n++;
+			}
+			mn++;
+		}
+	  	return nodes;
+	}
+
+	var network;
+	var edgesUUID = {};
+
+	function computeEdges(nodes) {
+		var findNodesByUuid = function(uuid) {
+	  		for (var n in nodes) {
+	  			var node = nodes[n];
+	  			if (node.uuid == uuid) return node;
+	  		}
+	  		return null;
+	  	}
+	  	var edges = [];
+	  	edgesUUID = {};
+	  	var n = 0;
+	  	for (var m in data.modules) {
+			var module = data.modules[m];
+			for (var f in module.functions) {
+				var func = findFunctionByUuid(module.functions[f]);
+				for (var c in func.calls) {
+					var call = func.calls[c];
+					var called = findNodesByUuid(call.called);
+					var calling = findNodesByUuid(call.calling);
+					if (called != null && calling != null) {
+						var CCs = findCFsFromCall(call.calling,call.called,call.line);
+						edges.push({"from":calling.id,"to":called.id,"arrows":"to","width":1,"id":"uuid"+n,"selectionWidth":3});
+						edgesUUID["uuid"+n] = CCs;
+						n++;
+					}
+				}
+			}
+		}
+		return edges;
+	}
+
+  	var options = {
+  	  nodes: {
+        shape: 'box',
+        font: {
+          bold: {
+            color: '#0077aa'
+          }
+        }
+      },
+      layout: {
+        hierarchical: {
+          enabled: true,
+          direction: 'LR',    // UD
+          sortMethod: 'directed'
+        }
+      },
+      interaction: {
+    		navigationButtons: true,
+    		zoomView: false
+  	  },
+      configure: {
+      	enabled: false
+      }
+    };
+    // Read the direction in the local storage
+    if (hasStorage) {
+    	var dir = localStorage.getItem("options.layout.hierarchical.direction");
+    	if (dir != null && dir != undefined) {
+	    	options.layout.hierarchical.direction = dir;
+	    	if (dir == 'UD') {
+	    		$("#switchTDID :input").prop("checked",true);
+	    	}
+	    }
+    }
+  	displayCallGraphAndSummary(); // display the table and the call graph
+	
+	$(".openCloseClass").click(function(){
+		var range = $(this).attr('range');
+		if ($(this).hasClass('fa-chevron-right')) {
+			$(this).removeClass('fa-chevron-right');
+			$(this).addClass('fa-chevron-down');
+			$(".openClose"+range+"Class").css('display','');
+		} else {
+			$(this).addClass('fa-chevron-right');
+			$(this).removeClass('fa-chevron-down');
+			$(".openClose"+range+"Class").css('display','none');
+		}
+	});
+	
+	// Hide some part of the report if no WCET
+	if (data.level < 2) $(".noWCETClass").css("display","none");
+	if (data.level < 1) $(".noMinMaxClass").css("display","none");
+	
+	
+	</script>
+
+
+</body>
+</html>

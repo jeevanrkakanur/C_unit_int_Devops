@@ -1,0 +1,374 @@
+{
+  "modules": {
+    "H3148611719666651757": {
+      "name": "\u003ci\u003eUnknown Modules\u003c/i\u003e",
+      "fullname": "\u003ci\u003eUnknown Modules\u003c/i\u003e",
+      "uuid": "H3148611719666651757",
+      "unknown": true,
+      "functions": [
+        "printf",
+        "scanf"
+      ]
+    },
+    "H8804152120937257248": {
+      "name": "calculator.c",
+      "fullname": "calculator.c",
+      "uuid": "H8804152120937257248",
+      "unknown": false,
+      "functions": [
+        "add",
+        "subtract"
+      ]
+    },
+    "H9009042695716972312": {
+      "name": "main.c",
+      "fullname": "main.c",
+      "uuid": "H9009042695716972312",
+      "unknown": false,
+      "functions": [
+        "main"
+      ]
+    }
+  },
+  "functions": {
+    "printf": {
+      "name": "printf",
+      "line": -1,
+      "id": 0,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H3148611719666651757",
+      "calls": [],
+      "level": 1,
+      "calledby": [
+        "main"
+      ],
+      "wcet": -1
+    },
+    "scanf": {
+      "name": "scanf",
+      "line": -1,
+      "id": 1,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H3148611719666651757",
+      "calls": [],
+      "level": 1,
+      "calledby": [
+        "main"
+      ],
+      "wcet": -1
+    },
+    "add": {
+      "name": "add",
+      "line": 0,
+      "id": 0,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H8804152120937257248",
+      "calls": [],
+      "level": 1,
+      "calledby": [
+        "main"
+      ],
+      "wcet": -1
+    },
+    "subtract": {
+      "name": "subtract",
+      "line": 0,
+      "id": 0,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H8804152120937257248",
+      "calls": [],
+      "level": 1,
+      "calledby": [
+        "main"
+      ],
+      "wcet": -1
+    },
+    "main": {
+      "name": "main",
+      "line": 0,
+      "id": 0,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H9009042695716972312",
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 8,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 9,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 10,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "scanf",
+          "line": 11,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 13,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "scanf",
+          "line": 14,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "add",
+          "line": 18,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 19,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "subtract",
+          "line": 22,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 23,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 26,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "level": 0,
+      "calledby": [],
+      "wcet": -1
+    }
+  },
+  "entrypoints": [
+    {
+      "name": "main",
+      "module": "H9009042695716972312",
+      "wcet": -1
+    }
+  ],
+  "controlcouplings": [
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "add",
+          "line": 18,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 10,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 13,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 19,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 23,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 26,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 8,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 9,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "scanf",
+          "line": 11,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "scanf",
+          "line": 14,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "subtract",
+          "line": 22,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    }
+  ],
+  "filtered": false,
+  "filtered_longest": false,
+  "nbcc": 11,
+  "nbcovered": 0,
+  "nbccShortest": 0,
+  "nbcoveredShortest": 0,
+  "nbccLongest": 0,
+  "nbcoveredLongest": 0
+}
