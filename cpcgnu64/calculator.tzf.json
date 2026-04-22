@@ -1,5 +1,14 @@
 {
   "modules": {
+    "H2579059401078782812": {
+      "name": "main.c",
+      "fullname": "D:\\\\HCL_GIT_DEVOPS\\\\Demo_GIT\\\\main.c",
+      "uuid": "H2579059401078782812",
+      "unknown": false,
+      "functions": [
+        "main"
+      ]
+    },
     "H2579061770660939698": {
       "name": "main.c",
       "fullname": "D:\\\\HCL_GIT_DEVOPS\\\\main.c",
@@ -17,6 +26,17 @@
       "functions": [
         "printf",
         "scanf"
+      ]
+    },
+    "H3772256207253854283": {
+      "name": "calculator.c",
+      "fullname": "D:\\\\HCL_GIT_DEVOPS\\\\Demo_GIT\\\\calculator.c",
+      "uuid": "H3772256207253854283",
+      "unknown": false,
+      "functions": [
+        "add",
+        "multiply",
+        "subtract"
       ]
     },
     "H8804152170639184318": {
@@ -174,6 +194,18 @@
       ],
       "wcet": -1
     },
+    "multiply": {
+      "name": "multiply",
+      "line": 14,
+      "id": 3,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H3772256207253854283",
+      "calls": [],
+      "level": -1,
+      "calledby": [],
+      "wcet": -1
+    },
     "subtract": {
       "name": "subtract",
       "line": 9,
@@ -213,10 +245,10 @@
       ],
       "missingfunctions": [
         {
-          "name": "main"
+          "name": "add"
         },
         {
-          "name": "add"
+          "name": "main"
         }
       ],
       "alternates": []
@@ -268,10 +300,10 @@
       ],
       "missingfunctions": [
         {
-          "name": "main"
+          "name": "printf"
         },
         {
-          "name": "printf"
+          "name": "main"
         }
       ],
       "alternates": []
@@ -322,10 +354,10 @@
       ],
       "missingfunctions": [
         {
-          "name": "main"
+          "name": "subtract"
         },
         {
-          "name": "subtract"
+          "name": "main"
         }
       ],
       "alternates": []

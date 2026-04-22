@@ -1,5 +1,27 @@
 DB "ObjecTest-Tracer"
 US ATT 14 3.0e
+SO "D:\\HCL_GIT_DEVOPS\\Demo_GIT\\main.c" 1776857253 "txt"
+LK 1
+IN "File" 33 "main.c"
+QA 0 8 5 "printf" Ext
+QA 1 9 5 "printf" Ext
+QA 2 10 5 "printf" Ext
+QA 3 11 5 "scanf" Ext
+QA 4 13 5 "printf" Ext
+QA 5 14 5 "scanf" Ext
+QA 6 18 22 "add" Ext
+QA 7 19 13 "printf" Ext
+QA 8 22 22 "subtract" Ext
+QA 9 23 13 "printf" Ext
+QA 10 26 22 "multiply" Ext
+QA 11 27 13 "printf" Ext
+QA 12 30 13 "printf" Ext
+LK 4
+MS 1 "main"
+ID 875589680 1595549520
+ED
+DB "ObjecTest-Tracer"
+US ATT 14 3.0e
 SO "D:\\HCL_GIT_DEVOPS\\main.c" 1776330452 "txt"
 LK 1
 IN "File" 33 "main.c"

@@ -22,7 +22,7 @@ int main() {
             result = subtract(num1, num2);
             printf("Result = %d\n", result);
             break;
-        case 2:
+        case 3:
             result = multiply(num1, num2);
             printf("Result = %d\n", result);
             break;
@@ -32,3 +32,4 @@ int main() {
 
     return 0;
 }
+

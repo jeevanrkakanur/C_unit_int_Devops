@@ -1,4 +1,67 @@
 VE 3.0e C++COV #i6 9.0.0.2 attolcc4
+FC "calculator.c" "D:\\HCL_GIT_DEVOPS\\Demo_GIT\\"
+FD 1776857192
+TC PR RE AP BS BT BI BL CO
+PR 0 return "add" 5 5
+PR 1 proc "add" 3 7
+BL 0 simple "add" / 3 7 0
+EV 0 5 5 p!i5!a,p!i5!b
+PR 2 return "subtract" 11 11
+PR 3 proc "subtract" 9 12
+BL 1 simple "subtract" / 9 12 0
+EV 1 11 5 p!i5!a,p!i5!b
+PR 4 return "multiply" 16 16
+PR 5 proc "multiply" 14 17
+BL 2 simple "multiply" / 14 17 0
+EV 2 16 5 p!i5!a,p!i5!b
+EK 1232759306 153487379 0 
+DC 89858896
+@RIK
+  ENCODING="System"
+  TOKEN="C++COV"
+  SRC="calculator.c"
+  DIR="D:\HCL_GIT_DEVOPS\Demo_GIT\"
+  DATE=1776857192
+  CHECKSUM=89858896
+  SUMS
+   ("&Functions"=0,
+    "-&Exits"=1,
+    "Functions and exits"=0+1),
+   ("&Calls"=10),
+   ("Statement &blocks"=20,
+    "-&Implicit blocks"=21,
+    "Decisions"=20+21,
+    "&Loops"=22),
+   ("Basic &conditions"=30,
+    "&Modified conditions",
+    "M&ultiple conditions")
+  ERRORS
+    32="a source object was not linked with the right runtime object (check instrumentation mode)",
+    49="a composition of conditions evaluates in an unexpected result, contact your vendor",
+    50="a composition of conditions reached with an unexpected input vector, contact your vendor"
+NODE TYPE=FILE NAME="calculator.c"@@COMMENT@#include "calculator.h"@/COMMENT@
+ 
+int @NODE TYPE=FUNCTION NAME="add"@@BRANCH MARK=TP ID=1 SUM=0@@LINK NAME="add"@add@/BRANCH@(int a, int b) @BRANCH MARK=TB ID=0 SUM=20@{
+
+    @BRANCH MARK=TP ID=0 SUM=1@return a + b;@SHORTCUT MARK=TB ID=0@@/BRANCH@
+
+}@/BRANCH@@/NODE@
+ 
+int @NODE TYPE=FUNCTION NAME="subtract"@@BRANCH MARK=TP ID=3 SUM=0@@LINK NAME="subtract"@subtract@/BRANCH@(int a, int b) @BRANCH MARK=TB ID=1 SUM=20@{
+
+    @BRANCH MARK=TP ID=2 SUM=1@return a - b;@SHORTCUT MARK=TB ID=1@@/BRANCH@
+}@/BRANCH@@/NODE@
+
+ int @NODE TYPE=FUNCTION NAME="multiply"@@BRANCH MARK=TP ID=5 SUM=0@@LINK NAME="multiply"@multiply@/BRANCH@(int a, int b) @BRANCH MARK=TB ID=2 SUM=20@{
+
+    @BRANCH MARK=TP ID=4 SUM=1@return a * b;@SHORTCUT MARK=TB ID=2@@/BRANCH@
+}@/BRANCH@@/NODE@
+ 
+
+ 
+
+@/NODE /RIK@
+VE 3.0e C++COV #i6 9.0.0.2 attolcc4
 FC "calculator.c" "D:\\HCL_GIT_DEVOPS\\"
 FD 1776330275
 TC PR RE AP BS BT BI BL CO

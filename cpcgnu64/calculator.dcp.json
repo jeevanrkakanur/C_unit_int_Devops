@@ -1,19 +1,20 @@
 {
   "modules": {
-    "H8804152120937257248": {
+    "H8804158145396073641": {
       "name": "calculator.c",
       "fullname": "calculator.c",
-      "uuid": "H8804152120937257248",
+      "uuid": "H8804158145396073641",
       "unknown": false,
       "functions": [
         "add",
+        "multiply",
         "subtract"
       ]
     },
-    "H9009042695716972312": {
+    "H9009039315125839222": {
       "name": "main.c",
       "fullname": "main.c",
-      "uuid": "H9009042695716972312",
+      "uuid": "H9009039315125839222",
       "unknown": false,
       "functions": [
         "main"
@@ -27,7 +28,19 @@
       "id": 0,
       "stacksize": -1,
       "nbCalled": 0,
-      "module": "H8804152120937257248",
+      "module": "H8804158145396073641",
+      "calls": [],
+      "level": -1,
+      "calledby": [],
+      "wcet": -1
+    },
+    "multiply": {
+      "name": "multiply",
+      "line": 0,
+      "id": 0,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H8804158145396073641",
       "calls": [],
       "level": -1,
       "calledby": [],
@@ -39,7 +52,7 @@
       "id": 0,
       "stacksize": -1,
       "nbCalled": 0,
-      "module": "H8804152120937257248",
+      "module": "H8804158145396073641",
       "calls": [],
       "level": -1,
       "calledby": [],
@@ -51,7 +64,7 @@
       "id": 0,
       "stacksize": -1,
       "nbCalled": 0,
-      "module": "H9009042695716972312",
+      "module": "H9009039315125839222",
       "calls": [],
       "level": -1,
       "calledby": [],

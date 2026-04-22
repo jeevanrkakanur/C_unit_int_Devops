@@ -1,0 +1,21 @@
+--------------------------------------------------------------------------------
+
+		DevOps Test Embedded Coverage - Report
+
+		    Tool version:    9.0.0.2.028.026
+
+			  Wed Apr 22 16:57:55 2026
+
+--------------------------------------------------------------------------------
+Conclusion :
+		Functions ...................   0.0% (0/7)
+		Functions and exits .........   0.0% (0/14)
+		Calls .......................   0.0% (0/24)
+		Statement blocks ............   0.0% (0/14)
+		Implicit blocks .............   none
+		Decisions ...................   0.0% (0/14)
+		Loops .......................   none
+		Basic conditions ............   0.0% (0/7)
+--------------------------------------------------------------------------------
+FDCFILES="D:\HCL_GIT_DEVOPS\Demo_GIT\main.c.fdc" "D:\HCL_GIT_DEVOPS\Demo_GIT\calculator.c.fdc"
+TIOFILES="D:\HCL_GIT_DEVOPS\Demo_GIT\cpcgnu64\calculator.tio" 

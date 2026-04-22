@@ -1,5 +1,18 @@
 DB "ObjecTest-Tracer"
 US ATT 14 3.0e
+SO "D:\\HCL_GIT_DEVOPS\\Demo_GIT\\calculator.c" 1776857192 "txt"
+LK 1
+IN "File" 33 "calculator.c"
+LK 3
+MS 1 "add"
+LK 9
+MS 2 "subtract"
+LK 14
+MS 3 "multiply"
+ID 1232759306 1297229083
+ED
+DB "ObjecTest-Tracer"
+US ATT 14 3.0e
 SO "D:\\HCL_GIT_DEVOPS\\calculator.c" 1776330275 "txt"
 LK 1
 IN "File" 33 "calculator.c"

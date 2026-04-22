@@ -17,7 +17,28 @@
       "unknown": false,
       "functions": [
         "add",
+        "multiply",
         "subtract"
+      ]
+    },
+    "H8804158145396073641": {
+      "name": "calculator.c",
+      "fullname": "calculator.c",
+      "uuid": "H8804158145396073641",
+      "unknown": false,
+      "functions": [
+        "add",
+        "multiply",
+        "subtract"
+      ]
+    },
+    "H9009039315125839222": {
+      "name": "main.c",
+      "fullname": "main.c",
+      "uuid": "H9009039315125839222",
+      "unknown": false,
+      "functions": [
+        "main"
       ]
     },
     "H9009042695716972312": {
@@ -65,7 +86,21 @@
       "id": 0,
       "stacksize": -1,
       "nbCalled": 0,
-      "module": "H8804152120937257248",
+      "module": "H8804158145396073641",
+      "calls": [],
+      "level": 1,
+      "calledby": [
+        "main"
+      ],
+      "wcet": -1
+    },
+    "multiply": {
+      "name": "multiply",
+      "line": 0,
+      "id": 0,
+      "stacksize": -1,
+      "nbCalled": 0,
+      "module": "H8804158145396073641",
       "calls": [],
       "level": 1,
       "calledby": [
@@ -79,7 +114,7 @@
       "id": 0,
       "stacksize": -1,
       "nbCalled": 0,
-      "module": "H8804152120937257248",
+      "module": "H8804158145396073641",
       "calls": [],
       "level": 1,
       "calledby": [
@@ -95,6 +130,110 @@
       "nbCalled": 0,
       "module": "H9009042695716972312",
       "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 8,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 9,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 10,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "scanf",
+          "line": 11,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 13,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "scanf",
+          "line": 14,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "add",
+          "line": 18,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 19,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "subtract",
+          "line": 22,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 23,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "multiply",
+          "line": 26,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 27,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 30,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        },
         {
           "calling": "main",
           "called": "printf",
@@ -218,8 +357,173 @@
       "calls": [
         {
           "calling": "main",
+          "called": "add",
+          "line": 18,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "add",
+          "line": 18,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "add",
+          "line": 18,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "multiply",
+          "line": 26,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "multiply",
+          "line": 26,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
           "called": "printf",
           "line": 10,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 10,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 10,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 10,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 13,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 13,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 13,
           "col": -1,
           "same_module": false,
           "nbcalled": 0
@@ -264,6 +568,96 @@
         {
           "calling": "main",
           "called": "printf",
+          "line": 19,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 19,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 19,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 23,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 23,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 23,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
           "line": 23,
           "col": -1,
           "same_module": false,
@@ -294,7 +688,172 @@
         {
           "calling": "main",
           "called": "printf",
+          "line": 26,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 27,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 27,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 30,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 30,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
           "line": 8,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 8,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 8,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 8,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 9,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 9,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "printf",
+          "line": 9,
           "col": -1,
           "same_module": false,
           "nbcalled": 0
@@ -339,7 +898,142 @@
         {
           "calling": "main",
           "called": "scanf",
+          "line": 11,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "scanf",
+          "line": 11,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "scanf",
+          "line": 11,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "scanf",
           "line": 14,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "scanf",
+          "line": 14,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "scanf",
+          "line": 14,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "scanf",
+          "line": 14,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "subtract",
+          "line": 22,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "subtract",
+          "line": 22,
+          "col": -1,
+          "same_module": false,
+          "nbcalled": 0
+        }
+      ],
+      "testcases": []
+    },
+    {
+      "isShortest": false,
+      "isLongest": false,
+      "calls": [
+        {
+          "calling": "main",
+          "called": "subtract",
+          "line": 22,
           "col": -1,
           "same_module": false,
           "nbcalled": 0
@@ -365,7 +1059,7 @@
   ],
   "filtered": false,
   "filtered_longest": false,
-  "nbcc": 11,
+  "nbcc": 48,
   "nbcovered": 0,
   "nbccShortest": 0,
   "nbcoveredShortest": 0,

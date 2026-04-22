@@ -1,4 +1,100 @@
 VE 3.0e C++COV #i6 9.0.0.2 attolcc4
+FC "main.c" "D:\\HCL_GIT_DEVOPS\\Demo_GIT\\"
+FD 1776857253
+TC PR RE AP BS BT BI BL CO
+AP 0 "main" "printf" 8 8
+AP 1 "main" "printf" 9 9
+AP 2 "main" "printf" 10 10
+AP 3 "main" "scanf" 11 11
+AP 4 "main" "printf" 13 13
+AP 5 "main" "scanf" 14 14
+BL 0 simple "main" /case 18 18 5
+AP 6 "main" "add" 18 18
+AP 7 "main" "printf" 19 19
+CA 0 "main" "case 1" 17 17 5
+EA 0 16 5 l!i5!choice!5
+BL 1 simple "main" /case 22 22 5
+AP 8 "main" "subtract" 22 22
+AP 9 "main" "printf" 23 23
+CA 1 "main" "case 2" 21 21 5
+BL 2 simple "main" /case 26 26 5
+AP 10 "main" "multiply" 26 26
+AP 11 "main" "printf" 27 27
+CA 2 "main" "case 3" 25 25 5
+BL 3 simple "main" /case 30 30 5
+AP 12 "main" "printf" 30 30
+CA 3 "main" "default" 29 29 5
+PR 0 return "main" 33 33
+PR 1 proc "main" 4 34
+BL 4 simple "main" / 4 34 0
+EV 4 8 5 c!2!printf
+EV 4 9 5 c!2!printf
+EV 4 10 5 c!2!printf
+EV 4 11 5 c!2!scanf,l!i5!choice!5
+EV 4 13 5 c!2!printf
+EV 4 14 5 c!2!scanf,l!i5!num1!5,l!i5!num2!5
+EK 875589680 138021387 0 
+DC 71770440
+@RIK
+  ENCODING="System"
+  TOKEN="C++COV"
+  SRC="main.c"
+  DIR="D:\HCL_GIT_DEVOPS\Demo_GIT\"
+  DATE=1776857253
+  CHECKSUM=71770440
+  SUMS
+   ("&Functions"=0,
+    "-&Exits"=1,
+    "Functions and exits"=0+1),
+   ("&Calls"=10),
+   ("Statement &blocks"=20,
+    "-&Implicit blocks"=21,
+    "Decisions"=20+21,
+    "&Loops"=22),
+   ("Basic &conditions"=30,
+    "&Modified conditions",
+    "M&ultiple conditions")
+  ERRORS
+    32="a source object was not linked with the right runtime object (check instrumentation mode)",
+    49="a composition of conditions evaluates in an unexpected result, contact your vendor",
+    50="a composition of conditions reached with an unexpected input vector, contact your vendor"
+NODE TYPE=FILE NAME="main.c"@@COMMENT@#include <stdio.h>@/COMMENT@
+@COMMENT@#include "calculator.h"@/COMMENT@
+
+int @NODE TYPE=FUNCTION NAME="main"@@BRANCH MARK=TP ID=1 SUM=0@@LINK NAME="main"@main@/BRANCH@() @BRANCH MARK=TB ID=4 SUM=20@{
+    int num1, num2, choice;
+    int result;   @COMMENT@// use int since add/subtract return int@/COMMENT@
+
+    @BRANCH MARK=TA ID=0 SUM=10@@JUMP NAME="printf"@printf@/JUMP@("Simple Calculator\n")@/BRANCH@;
+    @BRANCH MARK=TA ID=1 SUM=10@@JUMP NAME="printf"@printf@/JUMP@("1. Add\n2. Subtract\n")@/BRANCH@;
+    @BRANCH MARK=TA ID=2 SUM=10@@JUMP NAME="printf"@printf@/JUMP@("Enter your choice: ")@/BRANCH@;
+    @BRANCH MARK=TA ID=3 SUM=10@@JUMP NAME="scanf"@scanf@/JUMP@("%d", &choice)@/BRANCH@;
+
+    @BRANCH MARK=TA ID=4 SUM=10@@JUMP NAME="printf"@printf@/JUMP@("Enter two numbers: ")@/BRANCH@;
+    @BRANCH MARK=TA ID=5 SUM=10@@JUMP NAME="scanf"@scanf@/JUMP@("%d %d", &num1, &num2)@/BRANCH@;
+
+    @DECISION SUM=20+21 ID=0|1|2|3@switch (choice) {
+        @BRANCH NO@@BRANCH MARK=TE ID=0 SUM=30@case 1:@/BRANCH@@/BRANCH@
+            @BRANCH MARK=TB ID=0 SUM=20@result = @BRANCH MARK=TA ID=6 SUM=10@@JUMP NAME="add"@add@/JUMP@(num1, num2)@/BRANCH@;
+            @BRANCH MARK=TA ID=7 SUM=10@@JUMP NAME="printf"@printf@/JUMP@("Result = %d\n", result)@/BRANCH@;
+            break;@SHORTCUT MARK=TB ID=0@
+        @BRANCH NO@@BRANCH MARK=TE ID=1 SUM=30@case 2:@/BRANCH@@/BRANCH@
+            @BRANCH MARK=TB ID=1 SUM=20@result = @BRANCH MARK=TA ID=8 SUM=10@@JUMP NAME="subtract"@subtract@/JUMP@(num1, num2)@/BRANCH@;
+            @BRANCH MARK=TA ID=9 SUM=10@@JUMP NAME="printf"@printf@/JUMP@("Result = %d\n", result)@/BRANCH@;
+            break;@SHORTCUT MARK=TB ID=0@
+        @BRANCH NO@@BRANCH MARK=TE ID=2 SUM=30@case 3:@/BRANCH@@/BRANCH@
+            @BRANCH MARK=TB ID=2 SUM=20@result = @BRANCH MARK=TA ID=10 SUM=10@@JUMP NAME="multiply"@multiply@/JUMP@(num1, num2)@/BRANCH@;
+            @BRANCH MARK=TA ID=11 SUM=10@@JUMP NAME="printf"@printf@/JUMP@("Result = %d\n", result)@/BRANCH@;
+            break;@SHORTCUT MARK=TB ID=0@
+        @BRANCH NO@@BRANCH MARK=TE ID=3 SUM=30@default:@/BRANCH@@/BRANCH@
+            @BRANCH MARK=TB ID=3 SUM=20@@BRANCH MARK=TA ID=12 SUM=10@@JUMP NAME="printf"@printf@/JUMP@("Invalid choice!\n")@/BRANCH@;
+    }@/BRANCH@@/BRANCH@@/BRANCH@@/BRANCH@@/DECISION@
+
+    @BRANCH MARK=TP ID=0 SUM=1@return 0;@SHORTCUT MARK=TB ID=4@@/BRANCH@
+}@/BRANCH@@/NODE@
+
+@/NODE /RIK@
+VE 3.0e C++COV #i6 9.0.0.2 attolcc4
 FC "main.c" "D:\\HCL_GIT_DEVOPS\\"
 FD 1776330452
 TC PR RE AP BS BT BI BL CO

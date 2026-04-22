@@ -1,7 +1,7 @@
-# 0 "D:\\HCL_GIT_DEVOPS\\main.c"
+# 0 "D:\\HCL_GIT_DEVOPS\\Demo_GIT\\main.c"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "D:\\HCL_GIT_DEVOPS\\main.c"
+# 1 "D:\\HCL_GIT_DEVOPS\\Demo_GIT\\main.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 29 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/_ansi.h" 1 3 4
@@ -998,16 +998,17 @@ _putchar_unlocked(int _c)
 }
 # 801 "/usr/include/stdio.h" 3 4
 
-# 2 "D:\\HCL_GIT_DEVOPS\\main.c" 2
-# 1 "D:\\HCL_GIT_DEVOPS/calculator.h" 1
+# 2 "D:\\HCL_GIT_DEVOPS\\Demo_GIT\\main.c" 2
+# 1 "calculator.h" 1
 
 
 
 
-# 4 "D:\\HCL_GIT_DEVOPS/calculator.h"
+# 4 "calculator.h"
 int add(int a, int b);
 int subtract(int a, int b);
-# 3 "D:\\HCL_GIT_DEVOPS\\main.c" 2
+int multiply(int a, int b);
+# 3 "D:\\HCL_GIT_DEVOPS\\Demo_GIT\\main.c" 2
 
 int main() {
     int num1, num2, choice;
@@ -1028,6 +1029,10 @@ int main() {
             break;
         case 2:
             result = subtract(num1, num2);
+            printf("Result = %d\n", result);
+            break;
+        case 3:
+            result = multiply(num1, num2);
             printf("Result = %d\n", result);
             break;
         default:

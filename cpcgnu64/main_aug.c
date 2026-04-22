@@ -1,8 +1,8 @@
 /* DevOps Test Embedded C/C++ Instrumentor 9.0.0.2.028.026 */
 /* Copyright(C) IBM 1992-2017, HCL Technologies 2017-2022. All rights reserved. */
 /*   Build date : 14-Jun-21 19:33 */
-/*   Execution date : 2026-03-22 16:20:49 */
-/*   Cmd line : "attolcc4" "cpcgnu64\main.i" "cpcgnu64\main_aug.c" "atus_c.def" "atl.opp" "-noinstrdir=D:\Program Files\HCL\TDPS2\cpcgnu64" "-nopath" "-proc=ret" "-block=logical" "-trace" "-mempro" "-perfpro" "-call" "-cond" "-StackSize" "-SET=MINMAX" "-studio_log=D:\HCL_GIT_DEVOPS\Demo_GIT\intermediates_files830189410.log" */
+/*   Execution date : 2026-03-22 16:57:38 */
+/*   Cmd line : "attolcc4" "cpcgnu64\main.i" "cpcgnu64\main_aug.c" "atus_c.def" "atl.opp" "-noinstrdir=D:\Program Files\HCL\TDPS2\cpcgnu64" "-nopath" "-proc=ret" "-block=logical" "-trace" "-mempro" "-perfpro" "-call" "-cond" "-StackSize" "-SET=MINMAX" "-studio_log=D:\HCL_GIT_DEVOPS\Demo_GIT\intermediates_files830192064.log" */
 
 #define ATL_C_INSTRUMENTOR 603
 
@@ -31,24 +31,24 @@
 #define _ATC_INIT_CONST_COMPOUND_STUFF
 
 _ATC_DECLARE_PROC(1,2)
-_ATC_DECLARE_CALL(1,11)
-_ATC_DECLARE_BLOC(1,4)
-_ATC_DECLARE_COND(1,3)
-_ATC_DECLARE(1,0x7B0C1A53UL,0x1F4122CBUL,2,_ATC_TAB_PROC(1),11,_ATC_TAB_CALL(1),4,_ATC_TAB_BLOC(1),3,_ATC_TAB_COND(1))
+_ATC_DECLARE_CALL(1,13)
+_ATC_DECLARE_BLOC(1,5)
+_ATC_DECLARE_COND(1,4)
+_ATC_DECLARE(1,0x34307030UL,0x83A0A0BUL,2,_ATC_TAB_PROC(1),13,_ATC_TAB_CALL(1),5,_ATC_TAB_BLOC(1),4,_ATC_TAB_COND(1))
 
-_ATL_STACK_DECLARE(1,0x7B0C1A53UL,0x6D0A67ABUL)
+_ATL_STACK_DECLARE(1,0x34307030UL,0x5F1A2750UL)
 
 _ATZ_DECLARE(1,1)
-_ATQ_DECLARE_WITH_CALLS(1,1,11)
+_ATQ_DECLARE_WITH_CALLS(1,1,13)
 #define _ATP_LINK_PARSE_GLOBALS
 
 #ifdef ATL_DECLARATIONS_END
 ATL_DECLARATIONS_END
 #endif
-# 0 "D:\\HCL_GIT_DEVOPS\\main.c"
+# 0 "D:\\HCL_GIT_DEVOPS\\Demo_GIT\\main.c"
 # 0 "<built-in>"
 # 0 "<command-line>"
-# 1 "D:\\HCL_GIT_DEVOPS\\main.c"
+# 1 "D:\\HCL_GIT_DEVOPS\\Demo_GIT\\main.c"
 # 1 "/usr/include/stdio.h" 1 3 4
 # 29 "/usr/include/stdio.h" 3 4
 # 1 "/usr/include/_ansi.h" 1 3 4
@@ -1045,18 +1045,19 @@ _putchar_unlocked(int _c)
 }
 # 801 "/usr/include/stdio.h" 3 4
 
-# 2 "D:\\HCL_GIT_DEVOPS\\main.c" 2
-# 1 "D:\\HCL_GIT_DEVOPS/calculator.h" 1
+# 2 "D:\\HCL_GIT_DEVOPS\\Demo_GIT\\main.c" 2
+# 1 "calculator.h" 1
 
 
 
 
-# 4 "D:\\HCL_GIT_DEVOPS/calculator.h"
+# 4 "calculator.h"
 int add(int a, int b);
 int subtract(int a, int b);
-# 3 "D:\\HCL_GIT_DEVOPS\\main.c" 2
+int multiply(int a, int b);
+# 3 "D:\\HCL_GIT_DEVOPS\\Demo_GIT\\main.c" 2
 
-int main() {_ATC_LINK(1);{_ATC_PROC_IN(1,1);{_ATC_BLOC(1,3);{_ATL_STACK_IN3(1,1,11) _ATZ_IN(1)_ATQ_IN3(1,0,11)_ATP_IN(1){_ATT_IN(1){
+int main() {_ATC_LINK(1);{_ATC_PROC_IN(1,1);{_ATC_BLOC(1,4);{_ATL_STACK_IN3(1,1,13) _ATZ_IN(1)_ATQ_IN3(1,0,13)_ATP_IN(1){_ATT_IN(1){
     int num1, num2, choice;
     int result;
 
@@ -1077,9 +1078,13 @@ int main() {_ATC_LINK(1);{_ATC_PROC_IN(1,1);{_ATC_BLOC(1,3);{_ATL_STACK_IN3(1,1,
             _ATC_BLOC(1,1);result = (_ATQ_CALL(1,8,0),(_ATC_CALL(1,8),(_ATP_LINE_OFFSET_EXPR_START(1,18),(subtract(num1, num2)))));}
             (_ATQ_CALL(1,9,0),(_ATC_CALL(1,9),(_ATP_LINE_OFFSET_EXPR_START(1,19),(printf("Result = %d\n", result)))));
             break;
-        default:{_ATC_COND_CASE(1,2);
-            _ATC_BLOC(1,2);(_ATQ_CALL(1,10,0),(_ATC_CALL(1,10),(_ATP_LINE_OFFSET_EXPR_START(1,22),(printf("Invalid choice!\n")))));}
+        case 3:{_ATC_COND_CASE(1,2);
+            _ATC_BLOC(1,2);result = (_ATQ_CALL(1,10,0),(_ATC_CALL(1,10),(_ATP_LINE_OFFSET_EXPR_START(1,22),(multiply(num1, num2)))));}
+            (_ATQ_CALL(1,11,0),(_ATC_CALL(1,11),(_ATP_LINE_OFFSET_EXPR_START(1,23),(printf("Result = %d\n", result)))));
+            break;
+        default:{_ATC_COND_CASE(1,3);
+            _ATC_BLOC(1,3);(_ATQ_CALL(1,12,0),(_ATC_CALL(1,12),(_ATP_LINE_OFFSET_EXPR_START(1,26),(printf("Invalid choice!\n")))));}
     }}
 
-    {_ATP_LINE_OFFSET_RETURN(1,25);{ _ATT_OUT _ATQ_OUT _ATL_STACK_OUT {_ATC_PROC(1,0);{_ATL_END_EXEC;return 0;}}}}
+    {_ATP_LINE_OFFSET_RETURN(1,29);{ _ATT_OUT _ATQ_OUT _ATL_STACK_OUT {_ATC_PROC(1,0);{_ATL_END_EXEC;return 0;}}}}
 }}}}}}
