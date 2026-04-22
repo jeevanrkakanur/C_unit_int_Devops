@@ -4,7 +4,7 @@
 int main() {
     int num1, num2, choice;
     int result;   // use int since add/subtract return int
-
+// TEST
     printf("Simple Calculator\n");
     printf("1. Add\n2. Subtract\n");
     printf("Enter your choice: ");
