@@ -1,27 +1,50 @@
 #include <stdio.h>
 #include "calculator.h"
+#include "area.h"
 
 int main() {
-    int num1, num2, choice;
-    float result;
+    int num1, num2;
+    int choice;
+    int result;
 
     printf("Simple Calculator\n");
-    printf("1. Add\n2. Subtract\n");
+    printf("1. Add\n");
+    printf("2. Subtract\n");
+    printf("3. Square Area\n");
+    printf("4. Rectangle Area\n");
+
     printf("Enter your choice: ");
     scanf("%d", &choice);
 
-    printf("Enter two numbers: ");
-    scanf("%d %d", &num1, &num2);
-
     switch (choice) {
         case 1:
+            printf("Enter two numbers: ");
+            scanf("%d %d", &num1, &num2);
             result = add(num1, num2);
-            printf("Result = %.2f\n", result);
+            printf("Result = %d\n", result);
             break;
+
         case 2:
-            result = subtract(num1, num2);
-            printf("Result = %.2f\n", result);
+            printf("Enter two numbers: ");
+            scanf("%d %d", &num1, &num2);
+            result = sub(num1, num2);
+            printf("Result = %d\n", result);
             break;
+
+        case 3:
+            printf("Enter side: ");
+            scanf("%d", &num1);
+            result = squareArea(num1);
+            printf("Square Area = %d\n", result);
+            break;
+
+        case 4:
+            printf("Enter length and width: ");
+            scanf("%d %d", &num1, &num2);
+            result = rectangleArea(num1, num2);
+            printf("Rectangle Area = %d\n", result);
+            break;
+
         default:
             printf("Invalid choice!\n");
     }
